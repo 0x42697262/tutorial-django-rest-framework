@@ -13,11 +13,21 @@ class SampleTable(models.Model):
     age  = models.IntegerField()
 ```
 
-After creating a model, make sure to execute `makemigrations` and `migrate`. You can do this by `python manage.py makemigrations` and `python manage.py migrate`.
+After creating a model, make sure to execute `makemigrations` and `migrate`. You can do this by `python manage.py makemigrations <project name>` and `python manage.py migrate`.
 
 
 ---
 
 # Chapter 1 Machine Problem
 
+## models.py
+
+To add new data to the database, simply run `python manage.py shell` and import the models.
+
+```
+from ch1.models import TestCases, StringInputs
+
+TestCases.objects.create(case_count=4, regular_expression='aaabbbbbb')
+...
+```
 
