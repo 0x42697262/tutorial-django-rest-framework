@@ -1,0 +1,3 @@
+{"regex": "a + b", "strings": [{"string_input": "a"}, {"string_input": "b"}]}
+{"regex": "a*b*", "strings": [{"string_input": "aaabbbbbb"}, {"string_input": "aaaaaa"}, {"string_input": "bbbbbaaaaa"}]}
+{"regex": "(ab)*(aa + bb)", "strings": [{"string_input": "aa"}, {"string_input": "e"}, {"string_input": "abababbb"}, {"string_input": "abababaaaa"}, {"string_input": "aaaaaabbbbbb"}, {"string_input": "bbbbbbababab"}]}
