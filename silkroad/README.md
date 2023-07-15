@@ -35,3 +35,5 @@ DB_NAME=<database name>
 DB_USER=<username>
 DB_PASSWORD=<user password>
 ```
+
+Start the server by running `python manage.py runserver`.
