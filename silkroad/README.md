@@ -16,14 +16,22 @@ End points:
 
 Models:
 - Jobs:
-    - [ ] should reside in jobs/models.py
-    - [ ] should have an owner field that's a foreign key to django.contrib.auth.models.User
-    - [ ] should have a created and modified timestamp
+    - [x] should reside in jobs/models.py
+    - [x] should have an owner field that's a foreign key to django.contrib.auth.models.User
+    - [x] should have a created and modified timestamp
 - Applications:
-    - [ ] should reside in applications/models.py
-    - [ ] should have an owner field that's a foreign key to django.contrib.auth.models.User
-    - [ ] should have a created and modified timestamp
+    - [x] should reside in applications/models.py
+    - [x] should have an owner field that's a foreign key to django.contrib.auth.models.User
+    - [x] should have a created and modified timestamp
 
 # Running
 
 Install the required dependencies `pip-sync requirements/base.txt`.
+
+Make sure to create an `.env` on `./silkroad/` directory.
+```
+SECRET_KEY=<secret key>
+DB_NAME=<database name>
+DB_USER=<username>
+DB_PASSWORD=<user password>
+```
