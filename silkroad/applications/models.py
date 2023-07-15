@@ -1,6 +1,6 @@
-from django.db          import models
-from django.contrib.auth.models import User
-from jobs.models       import Job
+from django.contrib.auth.models     import User
+from django.db                      import models
+from jobs.models                    import Job
 
 
 STATUS_CHOICES = (
