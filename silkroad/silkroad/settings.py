@@ -20,6 +20,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
         'drf-mockapp.serveo.net',
         '127.0.0.1',
+        'localhost',
         ]
 
 
