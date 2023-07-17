@@ -5,6 +5,10 @@ from jobs.serializers       import JobSerializer
 
 
 class ApplicationSerializer(serializers.ModelSerializer):
+    """
+    Serializer for the Application model.
+    """
+
     applied_job = JobSerializer
     class Meta:
         model = Application
