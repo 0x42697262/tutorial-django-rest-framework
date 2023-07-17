@@ -2,13 +2,6 @@ from django.contrib.auth.models     import User
 from django.db                      import models
 
 
-STATUS_CHOICES = (
-    (-1, 'Declined'),
-    (0, 'Pending'),
-    (1, 'Accepted'),
-    (2, 'Withdrawn'),
-)
-
 
 class Job(models.Model):
     """
@@ -16,7 +9,6 @@ class Job(models.Model):
     Defines the attributes of a job.
     """
     owner           = models.ForeignKey(User, on_delete=models.CASCADE)
-    status          = models.IntegerField(choices=STATUS_CHOICES, default=0)
     title           = models.TextField(max_length=32, null=True)
     description     = models.TextField(max_length=256, null=True)
 
@@ -24,5 +16,8 @@ class Job(models.Model):
     modified_at     = models.DateTimeField(auto_now=True)
     is_deleted      = models.BooleanField(default=False)
 
+    def delete(self, using=None, keep_parents=False):
+        self.is_deleted = True
+        self.save()
 
 
