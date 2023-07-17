@@ -6,8 +6,8 @@ For your practice tasks, we want you to make a set of endpoints for a "jobs" API
 For that set, please use /v1/jobs/ as the URL prefix. Please use ModelViewSet as the base class in views.py
 
 End points:
-- [ ] /v1/jobs/ - list all jobs
-- [ ] /v1/jobs/<id>/ - detail API for a job
+- [x] /v1/jobs/ - list all jobs
+- [x] /v1/jobs/<id>/ - detail API for a job
 - [ ] /v1/jobs/<id>/apply/ - create an application for the job
 - [ ] /v1/jobs/<id>/applications/ - list of applications for a job
 - [ ] /v1/jobs/<job_id>/applications/<application_id>/accept/ - sets the status of the job application as "accepted". Only the creator of the job can do this
