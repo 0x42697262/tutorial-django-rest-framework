@@ -17,7 +17,9 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+        'drf-mockapp.serveo.net'
+        ]
 
 
 # Application definition
@@ -47,7 +49,7 @@ MIDDLEWARE = [
 
 REST_FRAMEWORK = {
         'DEFAULT_PERMISSION_CLASSES' : [
-            'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+            # 'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
             ]
         }
 
