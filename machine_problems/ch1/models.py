@@ -12,13 +12,14 @@ class TestCases(models.Model):
 class StringInputs(models.Model):
     case  = models.ForeignKey(
                     TestCases,
-                    related_name='case',
+                    related_name='strings',
                     on_delete=models.CASCADE,
                     )
     string_input = models.CharField(max_length=1000)
 
     class Meta:
         ordering = ['case']
+        unique_together = [['case', 'string_input']]
 
     def __str__(self):
         return f"{self.string_input}"
