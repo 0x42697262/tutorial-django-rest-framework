@@ -6,3 +6,9 @@ from .serializers           import JobSerializer
 class JobViewSet(viewsets.ModelViewSet):
     queryset            = Job.objects.all()
     serializer_class    = JobSerializer
+
+    def get_queryset(self):
+        """
+        Displays Job data that are not deleted.
+        """
+        return Job.objects.filter(is_deleted=False)
