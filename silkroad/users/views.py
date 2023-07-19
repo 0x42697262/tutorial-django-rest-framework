@@ -22,3 +22,4 @@ class UserViewSet(viewsets.ModelViewSet):
         user        = User.objects.create_user(**serializer.validated_data)
 
         return Response(UserSerializer(user).data, status=status.HTTP_201_CREATED)
+    

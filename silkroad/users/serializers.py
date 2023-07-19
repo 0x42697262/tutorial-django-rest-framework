@@ -1,4 +1,3 @@
-
 from rest_framework                 import serializers
 
 from django.contrib.auth.models     import User
@@ -15,9 +14,18 @@ class UserSerializer(serializers.ModelSerializer):
                 }
     def update(self, instance, validated_data):
         """
-        Encrypt the password if it's included in the validated data
+        Custom logic for updating a user
         """
-        password = validated_data.get('password')
+
+
+        instance.username   = validated_data.get('username',    instance.username)
+        instance.email      = validated_data.get('email',       instance.email)
+        
+        # Encrypt the password if it's included in the validated data
+        password            = validated_data.get('password')
         if password:
-            validated_data['password'] = make_password(password)
-        return super().update(instance, validated_data)
+            instance.password = make_password(password)
+
+        instance.save()
+
+        return instance
