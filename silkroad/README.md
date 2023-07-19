@@ -8,11 +8,11 @@ For that set, please use /v1/jobs/ as the URL prefix. Please use ModelViewSet as
 End points:
 - [x] /v1/jobs/ - list all jobs
 - [x] /v1/jobs/<id>/ - detail API for a job
-- [ ] /v1/jobs/<id>/apply/ - create an application for the job
-- [ ] /v1/jobs/<id>/applications/ - list of applications for a job
-- [ ] /v1/jobs/<job_id>/applications/<application_id>/accept/ - sets the status of the job application as "accepted". Only the creator of the job can do this
-- [ ] /v1/jobs/<job_id>/applications/<application_id>/decline/ - sets the status of the job application as "declined". Only the creator of the job can do this
-- [ ] /v1/jobs/<job_id>/applications/<application_id>/withdraw/ - sets the status of the job application as "withdrawn". Only the creator of the application can do this
+- [x] /v1/jobs/<id>/apply/ - create an application for the job
+- [x] /v1/jobs/<id>/applications/ - list of applications for a job
+- [x] /v1/jobs/<job_id>/applications/<application_id>/accept/ - sets the status of the job application as "accepted". Only the creator of the job can do this
+- [x] /v1/jobs/<job_id>/applications/<application_id>/decline/ - sets the status of the job application as "declined". Only the creator of the job can do this
+- [x] /v1/jobs/<job_id>/applications/<application_id>/withdraw/ - sets the status of the job application as "withdrawn". Only the creator of the application can do this
 
 Models:
 - Jobs:
@@ -37,3 +37,30 @@ DB_PASSWORD=<user password>
 ```
 
 Start the server by running `python manage.py runserver`.
+
+----
+
+# Models
+
+By default, every model of each app should contain these fields:
+```
+created_at      = models.DateTimeField(auto_now_add=True)
+modified_at     = models.DateTimeField(auto_now=True)
+is_deleted      = models.BooleanField(default=False)
+```
+Except for the User model which uses the django auth user model `django.contrib.auth.models.User` with the field `is_active`.
+
+We don't want to truly delete anything in our database so that it can help us keep track of what is going on in the server.
+
+## Applications
+
+Applications are created by a user.
+
+## Jobs
+
+Jobs are created by a user.
+
+## Users
+
+Users creates jobs and apply for applications to a job.
+
